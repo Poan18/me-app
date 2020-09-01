@@ -3,6 +3,9 @@ import React from 'react'
 export default function Week() {
     return (
         <div>
+            <h2>Github</h2>
+            <p>Länk till applikationens <a href="https://github.com/Poan18/me-app">GitHub repo</a></p><br />
+
             <h2>Kmom01</h2>
             <p>This project was bootstrapped with <a href="https://github.com/facebook/create-react-appp">Create React App</a></p><br />
 
