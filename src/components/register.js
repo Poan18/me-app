@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FormGroup, FormLabel, FormControl, FormText, Button } from 'react-bootstrap';
+import { FormGroup, FormLabel, FormControl, Button } from 'react-bootstrap';
 import { useHistory } from "react-router-dom";
 
 const axios = require('axios');
