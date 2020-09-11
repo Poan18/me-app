@@ -15,7 +15,7 @@ export default function Register() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        axios.post('http://localhost:1337/register', {
+        axios.post('/register', {
             email: email,
             password: password
             })
@@ -25,9 +25,6 @@ export default function Register() {
             .catch(function (error) {
                 window.alert("Email används redan.");
             })
-            .then(function () {
-                console.log("hehe");
-            });
     }
 
     return (

@@ -11,7 +11,7 @@ export default function Navigation() {
               <Link to="/">Hem</Link>
             </li>
             <li>
-              <Link to="/reports/week/1">Rapport</Link>
+              <Link to="/reports">Rapporter</Link>
             </li>
             <li>
               <Link to="/register">Registrera</Link>
