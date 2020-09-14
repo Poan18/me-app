@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import { FormControl } from 'react-bootstrap';
 
 const axios = require('axios');
 
@@ -9,21 +10,20 @@ class Report extends React.Component {
         super(props);
 
         this.state = {
-            data: null,
+            data: '',
             week: null
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
         var data = this.getData();
         this.setState({ data: data});
     }
 
     getData() {
-        let id = this.props.match.params.id
+        let id = this.props.match.params.id;
         axios.get(`/reports/week/${id}`)
             .then((response) => {
-                console.log(response.data);
                 this.setState({ data: response.data, week: id });
             })
             .catch((error) => {
@@ -34,18 +34,27 @@ class Report extends React.Component {
     render() {
         return (
             <div className="reports">
-            <nav className="site-navigation">
-            <span>Vecka {this.state.week}</span>
-              <ul>
-                <li>
-                  <Link to="/reports">Rapporter</Link>
-                </li>
-              </ul>
-            </nav>
-            <div>{this.state.data}</div>
+                <nav className="site-navigation">
+                    <span>Vecka {this.state.week}</span>
+                    <ul>
+                        <li>
+                            <Link to={`/reports/week/${this.state.week}/update`}>Redigera</Link>
+                        </li>
+                        <li>
+                            <Link to="/reports">Rapporter</Link>
+                        </li>
+                    </ul>
+                </nav>
+                <FormControl
+                    type="textarea"
+                    as="textarea"
+                    rows="30"
+                    value={this.state.data}
+                    readOnly
+                />
             </div>
         );
     }
 }
 
-export default Report
+export default Report;

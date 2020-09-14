@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import CreateWeek from './createWeek';
+import CreateReport from './createReport';
 
 const axios = require('axios');
 
@@ -15,7 +15,7 @@ class Report extends React.Component {
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
         var data = this.getData();
         this.setState({ data: data});
     }
@@ -59,7 +59,7 @@ class Report extends React.Component {
                 </nav>
                 <div>
                 { this.state.isLoading ? 'Loading reports...' : [this.renderReports()
-                , <CreateWeek newWeek={this.state.data.length+1} />] }
+                , <CreateReport newWeek={this.state.data.length+1} />] }
                 </div>
             </div>
         )

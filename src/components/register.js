@@ -20,6 +20,7 @@ export default function Register() {
             password: password
             })
             .then(function (response) {
+                window.alert("Användare har skapats.");
                 history.push('/login');
             })
             .catch(function (error) {

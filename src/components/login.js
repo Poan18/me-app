@@ -18,14 +18,11 @@ export default function Login() {
             password: password
             })
             .then(function (response) {
-                console.log(response);
+                window.alert("Logged in");
             })
             .catch(function (error) {
-                console.log(error);
+                window.alert("Invalid information");
             })
-            .then(function () {
-                console.log("hehe");
-            });
     }
 
     return (

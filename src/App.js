@@ -6,7 +6,8 @@ import Reports from './components/reports';
 import Register from './components/register';
 import Login from './components/login';
 import Navigation from './components/navigation';
-import CreateWeek from './components/createWeek';
+import CreateReport from './components/createReport';
+import UpdateReport from './components/updateReport';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -15,11 +16,12 @@ function App() {
             <div>
                 <Navigation />
                 <Switch>
+                    <Route exact path="/reports/week/:id/update" component={UpdateReport} />
                     <Route exact path="/reports/week/:id" component={Report} />
                     <Route path="/reports/" component={Reports} />
                     <Route path="/login" component={Login} />
                     <Route path="/register" component={Register} />
-                    <Route path="/reports/week/create" component={CreateWeek} />
+                    <Route path="/reports/week/create" component={CreateReport} />
                     <Route path="/" component={Home} />
                 </Switch>
             </div>
