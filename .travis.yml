@@ -7,7 +7,6 @@ git:
 before script:
 - npm install
 - npm run build
-- npm start
 script:
 - npm test
 deploy:
