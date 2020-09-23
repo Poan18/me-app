@@ -10,7 +10,7 @@ git:
 
 before script:
     - npm install
-    - npm rum build
+    - npm run build
 
 script:
     - npm test

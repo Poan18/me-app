@@ -23,7 +23,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test-command": "mocha test/*.js",
-    "test": "serve -s build & npm run test-command",
+    "test": "serve -s build &npm run test-command",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

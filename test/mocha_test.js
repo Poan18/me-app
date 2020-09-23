@@ -20,7 +20,7 @@ test.describe("JSRamverk", function() {
         browser = new webdriver.Builder().
             withCapabilities(webdriver.Capabilities.firefox()).build();
 
-        browser.get("http://localhost:3000/");
+        browser.get("http://localhost:5000/");
         done();
     })
 
