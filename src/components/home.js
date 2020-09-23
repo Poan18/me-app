@@ -30,6 +30,7 @@ class Home extends React.Component {
     render() {
         return (
             <div className="home">
+                <h1>JSRamverk</h1>
                 <FormControl
                     type="textarea"
                     as="textarea"

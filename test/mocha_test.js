@@ -12,7 +12,7 @@ const By = webdriver.By;
 let browser;
 
 // Test Suite
-test.describe("Startpage", function() {
+test.describe("JSRamverk", function() {
 
     // Executed before each test case
     test.beforeEach(function(done) {
@@ -34,7 +34,7 @@ test.describe("Startpage", function() {
     test.it("Test index", function(done) {
         // Check correct title
         browser.getTitle().then(function(title) {
-            assert.equal(title, "React App");
+            assert.equal(title, "JSRamverk");
         });
 
         done();
