@@ -17,7 +17,7 @@ export default function Navigation() {
               <Link to="/register">Registrera</Link>
             </li>
             <li>
-              <Link to="/login">Logga In</Link>
+              <Link to="/login">Logga In </Link>
             </li>
           </ul>
         </nav>
