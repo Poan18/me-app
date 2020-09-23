@@ -1,16 +1,19 @@
 language: node_js
+
 node_js:
 - node
+
 sudo: false
+
 git:
   submodules: false
+
 before script:
 - npm install
+- sleep 5
 - npm run build
+- npm start
+- sleep 5
+
 script:
 - npm test
-deploy:
-  provider: heroku
-  app: me-app-tutorial-cicd
-  api_key:
-    secure: brkl5yj6a8M+2Q5/H/Q44mVrZEJ3CcsEh2CY6QO1M4H8tNo3+zUSHlTHMip5U5dueAGXqZGwbZ2jVq8eGtMp2paoIwXX7T9296V65+FRxGz4clcSeF9e2cOlB+KOpiFplHcohTV4I9r4llHQf6MaoYOammf1+foKnAwhQwcH6kopP6UJSwElGVi7nGB+DBchWrceCaTgcK0qKaVRA/fa6hjvp1j5CrbhfCN3fSXTv2noytgPCvYnjPcRu5laqYJnswCUcjm4MZ6gS7SXroLY6WduSklqmyGpqqGKaO6IFk66rRbmSpVwmjZWm11HE/Al8bRF/Lw9X8xV3mX9Ok445oa5a95dS7WZfJE9cMpK4TtsBA/J6gyF99apqxb29l7EolNUPS/r09m2tVuFEwMhXDbIqqn+6Yb0ET6hXhWdtbZcRCl9B72khGc5rkp5JdKxioeMRRS5WHQi72NfmYH3OEwJiVaH8dLk08rfsnxxcLpHstzIF7Ql2QnSVC4Hf+ZYapkCyLQcVit/Qa7gIOo3VNPLhxf7qBLH+sv6ah7RGTVQjVXxE7r9qC+dmyi1vU/tt41zU28VFho3bN6oXCAewp9diRAANeYqIwgsgdel3V+sUS5GlxKviAMYHOtmLy5+w+vv+Vtwfji3ZP/O3S+ePOD/mDbZVxGvy5endZv2bCk=
