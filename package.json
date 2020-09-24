@@ -21,10 +21,11 @@
     "serve": "^11.3.2"
   },
   "scripts": {
-      "start": "serve -s build",
-      "build": "react-scripts build",
-      "test": "mocha test/*.js",
-      "eject": "react-scripts eject"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test-command": "mocha test/*.js",
+    "test": "npm run test-command",
+    "eject": "react-scripts eject"
 
   },
   "eslintConfig": {

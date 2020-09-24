@@ -1,19 +1,15 @@
 language: node_js
 
 node_js:
-- node
+    - 'node'
 
 sudo: false
 
 git:
-  submodules: false
+    submodules: false
 
-before script:
-- npm install
-- sleep 5
-- npm run build
-- npm start
-- sleep 5
+before_script:
+    - npm install
 
 script:
-- npm test
+    - npm test
