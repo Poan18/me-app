@@ -1,9 +1,7 @@
 build:
   nodes:
-    coverage:
+    analysis:
       tests:
         override:
-          - command: npm test
-            coverage:
-              file: coverage/clover.xml
-              format: clover
+          # Add the respective Scrutinizer analysis for your language like
+          - js-scrutinizer-run

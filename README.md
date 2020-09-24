@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/Poan18/me-app.svg?branch=master)](https://travis-ci.org/Poan18/me-app)
+[![Build Status](https://scrutinizer-ci.com/g/Poan18/me-app/badges/build.png?b=master)](https://scrutinizer-ci.com/g/Poan18/me-app/build-status/master)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
