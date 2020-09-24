@@ -17,8 +17,8 @@ test.describe("JSRamverk", function() {
     // Executed before each test case
     test.beforeEach(function(done) {
         this.timeout(20000);
-        browser = new webdriver.Builder().
-            withCapabilities(webdriver.Capabilities.firefox()).build();
+        const screen = { width: 1920, height: 1080};
+        browser = new webdriver.Builder().forBrowser('firefox').setFirefoxOptions(new firefox.Options().headless().windowSize(screen)) .build();
 
         browser.get("https://ponand.me/");
         done();
