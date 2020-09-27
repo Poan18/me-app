@@ -9,6 +9,8 @@
     "axios": "^0.20.0",
     "bootstrap": "^4.5.2",
     "chromedriver": "^85.0.1",
+    "express": "^4.17.1",
+    "express-ws": "^4.0.0",
     "geckodriver": "^1.20.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
@@ -26,7 +28,6 @@
     "test-command": "mocha test/*.js",
     "test": "npm run test-command",
     "eject": "react-scripts eject"
-
   },
   "eslintConfig": {
     "extends": "react-app"

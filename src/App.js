@@ -8,6 +8,7 @@ import Login from './components/login';
 import Navigation from './components/navigation';
 import CreateReport from './components/createReport';
 import UpdateReport from './components/updateReport';
+import Chat from './components/chat';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
                     <Route path="/login" component={Login} />
                     <Route path="/register" component={Register} />
                     <Route path="/reports/week/create" component={CreateReport} />
+                    <Route path="/chat" component={Chat} />
                     <Route path="/" component={Home} />
                 </Switch>
             </div>
