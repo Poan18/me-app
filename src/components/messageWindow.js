@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Message = ({ text, username, self }) => (
+const Message = ({ text, username, time, self }) => (
   <div className={'message' + (self ? ' message-self' : '')}>
-    <div className='message-username'>{username}</div>
+    <div className='message-username'>{username} - {time}</div>
     <div className='message-text'>{text}</div>
   </div>
 );
@@ -27,7 +27,7 @@ export default class MessageWindow extends React.Component {
     return (
       <div className='message-window' ref={this.messageWindow}>
         {messages.map((msg, i) => {
-          return <Message key={i} text={msg.text} username={msg.username} self={username === msg.username} />
+          return <Message key={i} text={msg.text} username={msg.username} time={msg.time} self={username === msg.username} />
         })}
       </div>
     )

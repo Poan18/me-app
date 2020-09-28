@@ -18,11 +18,8 @@ export class App extends React.Component {
     registerOnMessageCallback(this.onMessageReceived.bind(this))
   }
 
-  componentDidMount () {
-      startWebsocketConnection();
-  }
-
   onMessageReceived (msg) {
+
     msg = JSON.parse(msg)
     this.setState({
       messages: this.state.messages.concat(msg)
@@ -30,17 +27,30 @@ export class App extends React.Component {
   }
 
   setUserName (name) {
+    startWebsocketConnection();
+
+    var now = new Date().toLocaleString().replace(",","").replace(/:.. /," ");
+    const message = {
+      username: 'Ny användare',
+      text: name + ' har gått med i chatten.',
+      time: now
+    }
+
+    setTimeout(function(){ send(JSON.stringify(message)); }, 500);
+
     this.setState({
       username: name
-    })
+    });
   }
 
   sendMessage (text) {
+    var now = new Date().toLocaleString().replace(",","").replace(/:.. /," ");
     const message = {
       username: this.state.username,
-      text: text
+      text: text,
+      time: now
     }
-    send(JSON.stringify(message))
+    send(JSON.stringify(message));
   }
 
   render () {
