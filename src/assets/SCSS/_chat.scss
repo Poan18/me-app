@@ -1,9 +1,11 @@
 .container {
-  width: 800px;
+  width: 80%;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   margin: auto;
+  padding-bottom: 20px;
 }
 
 .container-title {

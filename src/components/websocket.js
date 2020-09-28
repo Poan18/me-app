@@ -5,7 +5,7 @@
 // then we set the host to "localhost:8083"
 // If the app is in production mode (using npm run build)
 // then the host is the current browser host
-const host = process.env.NODE_ENV === 'production' ? 'https://me-api.ponand.me/' : 'localhost:1337';
+const host = process.env.NODE_ENV === 'production' ? 'me-api.ponand.me' : 'localhost:1337';
 
 // We create an exported variable `send`, that we will assign
 // later (just know that it is exported for now)
@@ -17,7 +17,7 @@ let onMessageCallback;
 // to the server
 export const startWebsocketConnection = () => {
   // A new Websocket connection is initialized with the server
-  const ws = new window.WebSocket('ws://' + host + '/api/chat') || {};
+  const ws = new window.WebSocket('wss://' + host + '/api/chat') || {};
 
   // If the connection is successfully opened, we log to the console
   ws.onopen = () => {

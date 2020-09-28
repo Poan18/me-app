@@ -11,4 +11,10 @@
 .textbar-send {
   border-radius: 0;
   border: none;
+  padding: 10px;
+}
+
+.textbar-send:hover {
+  color: white;
+  background-color: black;
 }
