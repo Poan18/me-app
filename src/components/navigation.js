@@ -14,6 +14,9 @@ export default function Navigation() {
               <Link to="/reports">Rapporter</Link>
             </li>
             <li>
+              <Link to="/chat">Chatt</Link>
+            </li>
+            <li>
               <Link to="/register">Registrera</Link>
             </li>
             <li>
