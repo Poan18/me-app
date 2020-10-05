@@ -13,3 +13,14 @@
   text-align: center;
   margin: 10px 0;
 }
+
+.history-btn {
+    cursor: pointer;
+    font-weight: bold;
+    width: 80px;
+    padding: 10px;
+}
+
+.history-btn:hover {
+    color: blue;
+}

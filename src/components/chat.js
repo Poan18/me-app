@@ -21,7 +21,6 @@ export class Chat extends React.Component {
   }
 
   componentWillUnmount() {
-      console.log("BYE");
       closeWs();
   }
 
@@ -91,7 +90,7 @@ export class Chat extends React.Component {
     return (
       <div className='container'>
         <div className='container-title'>Chatten</div>
-        <div onClick={this.showHistory.bind(this)}>Historik</div>
+        <div className='history-btn' onClick={this.showHistory.bind(this)}>Historik</div>
         {this.state.showHistory ? <MessageWindow messages={this.state.messageHistory} username={this.state.username} /> : [<MessageWindow messages={this.state.messages} username={this.state.username} />, <TextBar onSend={sendMessage} />]}
       </div>
     )
