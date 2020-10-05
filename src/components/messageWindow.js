@@ -19,6 +19,7 @@ export default class MessageWindow extends React.Component {
     // change the `scrollTop` attribute to autoscroll the message window
     // to the bottom
     const messageWindow = this.messageWindow.current;
+    
     messageWindow.scrollTop = messageWindow.scrollHeight - messageWindow.clientHeight;
   }
   render () {

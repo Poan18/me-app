@@ -1,21 +1,28 @@
 import React from 'react'
-
-// We import all the components and functions that we defined previously
 import MessageWindow from './messageWindow'
 import TextBar from './textBar'
-import { registerOnMessageCallback, send, startWebsocketConnection } from './websocket'
+import { registerOnMessageCallback, send, startWebsocketConnection, closeWs } from './websocket'
 
-export class App extends React.Component {
+const axios = require('axios');
+
+export class Chat extends React.Component {
 
   state = {
     messages: [],
-    username: null
+    username: null,
+    showHistory: false,
+    messageHistory: []
   }
 
   constructor (props) {
     super(props)
 
     registerOnMessageCallback(this.onMessageReceived.bind(this))
+  }
+
+  componentWillUnmount() {
+      console.log("BYE");
+      closeWs();
   }
 
   onMessageReceived (msg) {
@@ -30,6 +37,7 @@ export class App extends React.Component {
     startWebsocketConnection();
 
     var now = new Date().toLocaleString().replace(",","").replace(/:.. /," ");
+
     const message = {
       username: 'Ny användare',
       text: name + ' har gått med i chatten.',
@@ -50,7 +58,19 @@ export class App extends React.Component {
       text: text,
       time: now
     }
+
     send(JSON.stringify(message));
+  }
+
+  showHistory () {
+      axios.get(`http://localhost:1337/messageHistory`)
+          .then((response) => {
+              console.log(response.data);
+              this.setState({ showHistory: !this.state.showHistory, messageHistory: response.data });
+          })
+          .catch((error) => {
+              console.error(error);
+          })
   }
 
   render () {
@@ -71,11 +91,11 @@ export class App extends React.Component {
     return (
       <div className='container'>
         <div className='container-title'>Chatten</div>
-        <MessageWindow messages={this.state.messages} username={this.state.username} />
-        <TextBar onSend={sendMessage} />
+        <div onClick={this.showHistory.bind(this)}>Historik</div>
+        {this.state.showHistory ? <MessageWindow messages={this.state.messageHistory} username={this.state.username} /> : [<MessageWindow messages={this.state.messages} username={this.state.username} />, <TextBar onSend={sendMessage} />]}
       </div>
     )
   }
 }
 
-export default App
+export default Chat;

@@ -17,6 +17,7 @@ export default class TextBar extends Component {
       this.sendMessage();
     }
   }
+  
   render () {
 
     const sendMessage = this.sendMessage.bind(this);
