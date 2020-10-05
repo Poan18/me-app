@@ -22,7 +22,7 @@ class Report extends React.Component {
 
     getData() {
         let id = this.props.match.params.id;
-        axios.get(`/reports/week/${id}`)
+        axios.get(`https://me-api.ponand.me/reports/week/${id}`)
             .then((response) => {
                 this.setState({ data: response.data, week: id });
             })

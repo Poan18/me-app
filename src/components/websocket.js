@@ -11,7 +11,7 @@ let onMessageCallback;
 // Initialize the websocket connection to the server
 export const startWebsocketConnection = () => {
   // A new Websocket connection is initialized with the server
-  const ws = new window.WebSocket('ws://' + host + '/api/chat') || {};
+  const ws = new window.WebSocket('wss://' + host + '/api/chat') || {};
 
   ws.onopen = () => {
     console.log('Opened ws connection.');

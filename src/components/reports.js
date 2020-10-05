@@ -21,7 +21,7 @@ class Report extends React.Component {
     }
 
     getData() {
-        axios.get(`/reports`)
+        axios.get(`https://me-api.ponand.me/reports`)
             .then((response) => {
                 this.setState({ data: response.data, isLoading: false });
             })

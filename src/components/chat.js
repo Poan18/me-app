@@ -21,7 +21,9 @@ export class Chat extends React.Component {
   }
 
   componentWillUnmount() {
-      closeWs();
+      if (this.state.username) {
+          closeWs();
+      }
   }
 
   onMessageReceived (msg) {
@@ -62,9 +64,8 @@ export class Chat extends React.Component {
   }
 
   showHistory () {
-      axios.get(`http://localhost:1337/messageHistory`)
+      axios.get(`https://me-api.ponand.me/messageHistory`)
           .then((response) => {
-              console.log(response.data);
               this.setState({ showHistory: !this.state.showHistory, messageHistory: response.data });
           })
           .catch((error) => {

@@ -18,7 +18,7 @@ class Home extends React.Component {
     }
 
     getData() {
-        axios.get(`http://localhost:1337/`)
+        axios.get(`https://me-api.ponand.me/`)
             .then((response) => {
                 this.setState({ content: response.data.data.msg });
             })
